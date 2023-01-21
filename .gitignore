@@ -3,6 +3,7 @@
 node_modules/
 dist/
 out/
+.next
 
 # Compiled Java class files
 *.class
