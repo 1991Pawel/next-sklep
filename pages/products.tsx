@@ -1,4 +1,4 @@
-import { Product } from "@/components/Product";
+import {  ProductListItem } from "@/components/Product";
 import { InferGetServerSidePropsType } from "next";
 
 export const getStaticProps = async () => {
@@ -32,13 +32,12 @@ const ProductPage = ({
     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {data.map((product) => (
         <li key={product.id} className="shadow-xl border-2">
-          <Product
+          <ProductListItem
             data={{
+              id:product.id,
               title: product.title,
-              description: product.description,
               thumbnailUrl: product.image,
               thumbnailAlt: product.title,
-              rating: product.rating.rate,
             }}
           />
         </li>
