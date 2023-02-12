@@ -23,7 +23,14 @@ interface ProductDetailsProps {
 export const ProductDetails = ({ data }: ProductDetailsProps) => {
   return (
     <>
-      <img src={data.thumbnailUrl} alt={data.thumbnailAlt} />
+      <Image
+        layout="responsive"
+        width={16}
+        height={9}
+        src={data.thumbnailUrl}
+        alt={data.thumbnailAlt}
+        objectFit="cover"
+      />
       <h2 className="p-4 text-3xl font-bold">{data.title}</h2>
       <p className="p-4">{data.description}</p>
       <Rating rating={data.rating} />
