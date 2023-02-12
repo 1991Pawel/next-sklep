@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Rating } from "./Rating";
+import Image from "next/legacy/image";
 
 interface ProductDetails {
-  id:number,
+  id: number;
   description: string;
   thumbnailUrl: string;
   thumbnailAlt: string;
@@ -37,9 +38,18 @@ interface ProductListItemProps {
 export const ProductListItem = ({ data }: ProductListItemProps) => {
   return (
     <>
-      <img src={data.thumbnailUrl} alt={data.thumbnailAlt} />
+      <div className="bg-white p-4">
+        <Image
+          layout="responsive"
+          width={16}
+          height={9}
+          src={data.thumbnailUrl}
+          alt={data.thumbnailAlt}
+          objectFit="cover"
+        />
+      </div>
       <Link href={`products/${data.id}`}>
-      <h2 className="p-4 text-3xl font-bold">{data.title}</h2>
+        <h2 className="p-4 text-3xl font-bold">{data.title}</h2>
       </Link>
     </>
   );
