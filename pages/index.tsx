@@ -1,15 +1,11 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { ProductDetails } from "@/components/Product";
 import { Main } from "@/components/Main";
+import { Layout } from "@/components/Layout";
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-teal-400">
-      <Header />
-      <Main>Main content</Main>
-      <Footer />
-    </div>
+    <>
+      <Main>Lorem ipsum dolor sit amet.</Main>
+    </>
   );
 };
 

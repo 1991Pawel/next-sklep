@@ -1,4 +1,5 @@
-import {  ProductListItem } from "@/components/Product";
+import { Layout } from "@/components/Layout";
+import { ProductListItem } from "@/components/Product";
 import { InferGetServerSidePropsType } from "next";
 
 export const getStaticProps = async () => {
@@ -34,7 +35,7 @@ const ProductPage = ({
         <li key={product.id} className="shadow-xl border-2">
           <ProductListItem
             data={{
-              id:product.id,
+              id: product.id,
               title: product.title,
               thumbnailUrl: product.image,
               thumbnailAlt: product.title,
