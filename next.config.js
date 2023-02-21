@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["fakestoreapi.com"],
+    domains: ["naszsklep-api.vercel.app"],
     formats: ["image/avif", "image/webp"],
   },
 };

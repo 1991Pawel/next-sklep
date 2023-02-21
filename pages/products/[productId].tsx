@@ -10,7 +10,7 @@ export type InferGetStaticPathsType<T> = T extends () => Promise<{
   : never;
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://fakestoreapi.com/products/");
+  const res = await fetch("https://naszsklep-api.vercel.app/api/products");
   const data: StoreApiResponse[] = await res.json();
 
   return {
@@ -36,7 +36,7 @@ export const getStaticProps = async ({
   }
 
   const res = await fetch(
-    `https://fakestoreapi.com/products/${params.productId}`
+    `https://naszsklep-api.vercel.app/api/products/${params.productId}`
   );
   const data: StoreApiResponse | null = await res.json();
 
@@ -52,6 +52,7 @@ interface StoreApiResponse {
   title: string;
   price: number;
   description: string;
+  longDescription: string;
   category: string;
   image: string;
   thumbnailAlt: string;
@@ -74,17 +75,16 @@ const ProductIdPage = ({
 
   return (
     <div>
-      <Link href="/products">
-        Wróć na stronę główną
-      </Link>
+      <Link href="/products">Wróć na stronę główną</Link>
       <ProductDetails
         data={{
-          id:data.id,
+          id: data.id,
           title: data.title,
           thumbnailAlt: data.title,
           thumbnailUrl: data.image,
           description: data.description,
           rating: data.rating.rate,
+          longDescription: data.longDescription,
         }}
       />
     </div>
