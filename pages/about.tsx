@@ -4,10 +4,7 @@ import { Main } from "@/components/Main";
 const About = () => {
   return (
     <div className="flex flex-col min-h-screen bg-teal-400">
-      <Header />
-      <Main>
-        about
-      </Main>
+      <Main>about</Main>
       <Footer />
     </div>
   );
